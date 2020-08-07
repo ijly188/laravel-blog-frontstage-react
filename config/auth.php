@@ -69,9 +69,9 @@ return [
         'users' => [
             'driver' => 'eloquent',
             // 驗證使用後台系統使用者
-            'model' => App\Entities\SystemUser::class,
+            // 'model' => App\Entities\SystemUser::class,
             // 驗證使用前台一般使用者
-            // 'model' => App\Entities\Member::class,
+            'model' => App\Entities\Member::class,
         ],
 
         // 'users' => [
