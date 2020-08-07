@@ -1,32 +1,18 @@
-// require('./bootstrap');
-import Vue from 'vue';
+/**
+ * First we will load all of this project's JavaScript dependencies which
+ * includes React and other helpers. It's a great starting point while
+ * building robust, powerful web applications using React + Laravel.
+ */
 
-import router from './routes';
-import axios from 'axios';
-import VueAxios from 'vue-axios';
-import Loading from 'vue-loading-overlay';
+require('./bootstrap');
 
-import zhTWvalidate from 'vee-validate/dist/locale/zh_TW';
-import VeeValidate from '../../public/helpers/vee-validate';
+/**
+ * Next, we will create a fresh React component instance and attach it to
+ * the page. Then, you may begin adding components to this application
+ * or customize the JavaScript scaffolding to fit your unique needs.
+ */
 
-import Vuex from 'vuex';
-import store from './vue/store';
+// require('./components/Example');
 
-Vue.use(VueAxios, axios);
-Vue.use(Vuex);
-Vue.component('Loading', Loading);
-
-Vue.use(VeeValidate);
-VeeValidate.Validator.localize('zh-TW', zhTWvalidate);
-
-axios.defaults.withCredentials = true;
-Vue.config.productionTip = false;
-
-window.Vue = require('vue');
-
-const app = new Vue({
-  el: '#app',
-  router,
-  store,
-});
-
+// build react App
+require('./Index');
