@@ -1,19 +1,29 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './Menu.css';
 
 function isNavLinkActive(currentPath) {
   return (match, location) => location.pathname === currentPath;
 }
 
-export default function Menu() {
+export default function Header() {
   return (
-    <nav>
-      <ul className="menu">
-        <li className="menu-item"><NavLink isActive={isNavLinkActive('/')} to="/" exact>Home</NavLink></li>
-        <li className="menu-item"><NavLink isActive={isNavLinkActive('/video')} to="/video">Videos</NavLink></li>
-      </ul>
+    <nav className="navbar navbar-expand-md navbar-dark fixed-top nav-bg">
+      <div className="container">
+        <NavLink isActive={isNavLinkActive('/')} to="/" className="navbar-brand" exact>
+          <img src="/img/logo_white.png" className="logo-img"/>
+        </NavLink>
+        <div className="form-inline mt-2 mt-md-0">
+          <input className="form-control mr-sm-2 nav-search" type="text" placeholder="Search" aria-label="Search" />
+          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">登入</button>
+        </div>
+      </div>
     </nav>
+    // <nav>
+    //   <ul className="menu">
+    //     <li className="menu-item"><NavLink isActive={isNavLinkActive('/')} to="/" exact>Home</NavLink></li>
+    //     <li className="menu-item"><NavLink isActive={isNavLinkActive('/video')} to="/video">Videos</NavLink></li>
+    //   </ul>
+    // </nav>
   );
 }
 // 選單用的link會用上面的NavLink因為會有isActive可以用
