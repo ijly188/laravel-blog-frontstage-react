@@ -1,8 +1,42 @@
+@charset 'utf-8';
+
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-// Variables
-@import 'variables';
+@import "~bootstrap/scss/functions";
+// Abstracts
+@import 'abstracts/_variables';
+@import "~bootstrap/scss/bootstrap";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// Base
+@import 'base/base';
+@import 'base/index';
+@import 'base/helpers';
+@import 'base/reset';
+@import 'base/typography';
+@import 'base/utility';
+
+// Components
+@import 'components/modal';
+// @import 'components/breadcrumbs';
+// @import 'components/buttons';
+// @import 'components/section-description';
+// @import 'components/sidebar';
+// @import 'components/might-like';
+// @import 'components/form';
+// @import 'components/alerts';
+
+// Layout
+@import 'layout/header';
+@import 'layout/aside';
+@import 'layout/content';
+@import 'layout/footer';
+
+// Pages
+@import 'pages/_member'
+// @import 'pages/landing-page';
+// @import 'pages/shop';
+// @import 'pages/product';
+// @import 'pages/cart';
+// @import 'pages/checkout';
+// @import 'pages/thankyou';

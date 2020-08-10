@@ -1,0 +1,158 @@
+
+.content-button{
+    background-color: #d4b9a1;
+    border-color: #d4b9a1;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 14px;
+    margin-top: -12px;
+}
+
+.content-button:hover{
+    background-color: #ad896a;
+    border-color: #ad896a;
+    color: #fff;
+}
+
+.search{
+    height: 38px;
+    line-height: 38px;
+    border-radius: 19px;
+    padding-left: 7%;
+}
+
+.table_wrap{
+    margin-top: 33px;
+}
+
+.tableheader_wrap{
+    background: #ececec;
+    display: flex;
+    flex-wrap: wrap;
+    height: 30px;
+    width: 100%;
+    div{
+        color: #707070;
+        display: flex;
+        flex: 0 0 25%;
+        font-size: 12px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.content_flex_wrap{
+    flex-wrap: wrap;
+    text-decoration: none;
+    width: 100%;
+    &:hover{
+        text-decoration: none;
+    }
+}
+
+.tablecontent_row{
+    border: 1px solid #ececec;
+    border-top: 0;
+    display: flex;
+    flex-wrap: wrap;
+    height: 65px;
+    width: 100%;
+    div{
+        color: #707070;
+        display: flex;
+        flex: 0 0 25%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+    }
+    .content-button{
+        margin-top: 0;
+    }
+    .icon{
+        margin-top: 6px;
+    }
+}
+
+.pagination_wrap nav{
+    margin: 0 auto;
+}
+
+.icon_wrap{
+    border: 1px solid #e1dedb;
+    border-radius: 100%;
+    font-size: 42px;
+    height: 44px;
+}
+
+.search::placeholder {
+    color: #a8a8a8;
+    font-size:14px;
+}
+
+.MemberDetail_wrap{
+    .btn_wrap{
+        margin-bottom: 12px;
+    }
+    .content-button{
+        margin-top: 0;
+    }
+    .detail_content{
+        margin-top: 12px;
+    }
+    .icon_wrap{
+        font-size: 96px;
+        height: 96px;
+        margin-bottom: 12px;
+    }
+    .form-group{
+        margin-bottom: 4px;
+    }
+}
+
+// media query setting
+@media (max-width: 767px) {
+    main{
+        padding: 1rem 1.5rem;
+    }
+    .content-button{
+        margin-top: 0;
+    }
+}
+@media (max-width: 576px) {
+    .tableheader_wrap{
+        div{
+            flex: 0 0 33%;
+        }
+    }
+    .tablecontent_row{
+        div{
+            flex: 0 0 33%;
+        }
+    }
+}
+@media (min-width: 480px) {
+}
+@media (min-width: 768px) and (max-width: 979px) {
+    .content-button{
+        margin-top: 0;
+    }
+    .allmemberwordding_wrap{
+        margin-bottom: 16px;
+    }
+}
+@media (min-width: 980px) {
+    .allmemberwordding {
+        display: block;
+    }
+    .content-button{
+        margin-top: 0;
+    }
+}
+@media (min-width: 1060px) {
+    .content-button{
+        margin-top: -12px;
+    }
+}
+@media (min-width: 1200px) {
+}

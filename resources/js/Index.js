@@ -1,10 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
+
 // TODO
 import App from './react/app';
 
 const rootEl = document.getElementById('app');
-ReactDOM.render(<App />, rootEl);
+ReactDOM.render(
+  <BrowserRouter>
+    <Switch>
+      <App />
+    </Switch>
+  </BrowserRouter>, rootEl
+);
 
 
 // Hot Reloading
