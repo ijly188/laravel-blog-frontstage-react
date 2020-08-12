@@ -1,6 +1,85 @@
+main{
+    .container .jumbotron{
+        margin-top: 73px;
+    }
+}
+
 .main_wrap{
     background: #fff;
     box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
     border-radius: 5px;
     padding: 5% 9%;
+}
+
+.content-button{
+    background-color: #858b79;
+    border-color: #858b79;
+    box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.15);
+    color: #fff;
+    font-size: 14px;
+}
+
+.content-button:hover{
+    background-color: #858b79;
+    border-color: #858b79;
+    color: #fff;
+    font-size: 14px;
+}
+
+.btn-login{
+    &:hover{
+        background: #858b79;
+    }
+}
+
+.articlelist_list{
+    margin: 28px -32px;
+    padding: 1rem 2rem;
+}
+
+.articlelist_list:hover{
+    background-color: rgba(#d4b9a1, .2);
+}
+
+.articlelist_writer{
+    margin: 10px 0;
+    font-family: HelveticaNeue;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+}
+
+.articlelist_content{
+    font-family: PingFangTC;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.63;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+}
+
+.articlelist_readmore{
+    font-family: HelveticaNeue;
+    font-size: 12px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #707070;
+}
+
+.pagination_wrap{
+    ul{
+        justify-content: center;
+    }
 }

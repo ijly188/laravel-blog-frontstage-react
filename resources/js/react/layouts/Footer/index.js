@@ -1,7 +1,9 @@
 import React from 'react';
 
-export default function Footer() {
+const Footer = () => {
   return (
     <footer className="text-center">Copyright © 2020 blogPURRR All Rights Reserved.</footer>
   );
 }
+export default { Footer };
+export { Footer };
