@@ -8,7 +8,7 @@
       <title>laravel blog frontstage react</title>
       <!-- Fonts -->
       <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-      <link rel="stylesheet" href="/icomoon/style.css">
+      <link rel="stylesheet" href="{{ asset('helpers/icomoon/style.css') }}">
       <link rel="stylesheet" href="{{ asset('css/app.css') }}">
    </head>
    <body>

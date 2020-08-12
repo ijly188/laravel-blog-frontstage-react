@@ -1,25 +1,42 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Route } from 'react-router-dom';
+import { 
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom';
 
-import Header from '../Header';
-import Footer from '../Footer';
-import BlogPic from '../BlogPic';
-import Content from '../Content';
+import { Header } from '../Header';
+import { Footer } from '../Footer';
+import { BlogPic } from '../BlogPic';
+import { Content } from '../Content';
 
-const IndexWrap = () => {
+const IndexWrap = ({ routes }) => {
   return (
     <div className="app">
         <Header />
         <main>
             <div className="container">
-                <BlogPic />
-                <Route path="/" exact component={Content} />
+              <Switch>
+                {routes.map((route, i) => {
+                  const { path, exact, routes } = route;
+                  return (
+                    <Route
+                      key={i}
+                      path={path}
+                      exact={exact}
+                      render={(routeProps) => (
+                        <route.component routes={routes} {...routeProps} />
+                      )}
+                    />
+                  );
+                })}
+              </Switch>
             </div>
         </main>
         <Footer />
     </div>
   );
 }
-export default {IndexWrap};
+export default { IndexWrap };
 export { IndexWrap };
