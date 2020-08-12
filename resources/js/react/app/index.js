@@ -3,11 +3,6 @@ import { Route } from 'react-router-dom';
 import '../../../sass/app.scss';
 import routes from '../../router.js';
 
-// page
-import { IndexWrap } from '../layouts/IndexWrap';
-import { Login } from '../pages/Login';
-import { Member } from '../pages/Member/Member';
-
 class App extends Component {
     render() {
         return (
