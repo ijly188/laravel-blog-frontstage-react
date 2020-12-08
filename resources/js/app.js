@@ -15,4 +15,4 @@ require('./bootstrap');
 // require('./components/Example');
 
 // build react App
-require('./Index');
+require('./index');
