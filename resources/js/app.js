@@ -15,4 +15,6 @@ require('./bootstrap');
 // require('./components/Example');
 
 // build react App
-require('./Index');
+require('./index');
+
+// laravel 預設app.js
