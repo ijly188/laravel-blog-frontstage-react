@@ -13,6 +13,8 @@
    </head>
    <body>
       <div id="app"></div>
-      <script src="{{ asset('js/app.js') }}"></script>
+      <script src="/js/manifest.js"></script>
+      <script src="/js/vendor.js"></script>
+      <script src="/js/app.js"></script>
    </body>
 </html>
