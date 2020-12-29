@@ -6,19 +6,21 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        {routes.map((route, i) => {
-          const { path, exact, routes } = route;
-          return (
-              <Route
-              key={i}
-              path={path}
-              exact={exact}
-              render={(routeProps) => (
-                  <route.component routes={routes} {...routeProps} />
-              )}
-              />
-          );
-          })}
+        {/* <React.Suspense fallback={loading}> */}
+          {routes.map((route, i) => {
+            const { path, exact, routes } = route;
+            return (
+                <Route
+                key={i}
+                path={path}
+                exact={exact}
+                render={(routeProps) => (
+                    <route.component routes={routes} {...routeProps} />
+                )}
+                />
+            );
+            })}
+          {/* </React.Suspense> */}
       </React.Fragment>
     )
   }
