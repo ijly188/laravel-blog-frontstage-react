@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import requestReducer from './requestReducer';
+import { articleList, articleInfo } from './article';
 
 export default combineReducers({
-  request: requestReducer,
+  articleList, articleInfo
 });

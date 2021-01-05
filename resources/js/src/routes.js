@@ -1,8 +1,9 @@
 // pages
-import IndexWrap from "./components/layouts/IndexWrap";
-import Login from './components/pages/Login';
-import Member from './components/pages/Member/Member';
-import MemberDetail from './components/pages/Member/MemberDetail';
+import IndexWrap from "./components/IndexWrap";
+// import Login from './components/Login';
+import Login from './containers/LoginContainer';
+import Member from './components/Member/Member';
+import MemberDetail from './components/Member/MemberDetail';
 
 const routes = [
   {
