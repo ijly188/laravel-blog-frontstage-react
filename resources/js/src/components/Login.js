@@ -1,25 +1,19 @@
 import React from 'react';
-
-const Login = (props) => {
-  console.log(props)
+// 接收到LoginContainer的props變數跟function綁上Component
+const Login = ({data, getArticleList, getArticleInfo}) => {
+  const {articleList, articleInfo} = data;
+  console.log('data', data);
   return (
     <section>
       <h3>文章列表</h3>
-      <button onClick={props.getArticalList}>取得文章列表</button>
-      data: {props.data}
+      {/* {console.log(props)} */}
+      {/* 這裡的props.getArticalList正是LoginContainer設定好的action dispatch function */}
+      <button onClick={getArticleList}>取得文章列表</button>
+      <button onClick={getArticleInfo}>取得單篇文章資料</button>
+      <div>articleList: {articleList}</div>
+      <div>articleInfo: {articleInfo}</div>
     </section>
   );
 }
-// const Login = () => {
-//   const dispatch = useDispatch();
-//   useEffect(() => {
-//     fetchRequestQuery(dispatch);
-//   }, []);
-
-//   const { request } = useSelector(state => state);
-//   return (
-//     <span>{JSON.stringify(request)}</span>
-//   );
-// };
 
 export default Login;
