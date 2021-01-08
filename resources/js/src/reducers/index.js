@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import { articleList, articleInfo } from './article';
+import { articleListState } from './article';
+import { exampleState } from './example';
 
 export default combineReducers({
-  articleList, articleInfo
+  articleListState,
+  exampleState,
 });

@@ -1,18 +1,13 @@
 import { connect } from 'react-redux';
 import Login from '../components/Login';
+import { getArticleList, getArticleInfo } from '../actions'
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
   console.log('state', state)
   return {
     data: state.articleList,
   };
 }
-function mapDispatchToProps(dispatch) {
-  return {
-    getArticalList() {
-      dispatch({ type: 'GETARTICLELIST' });
-    }
-  };
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login);
+// 把state跟action function綁到主要畫面上輸出
+export default connect(mapStateToProps, { getArticleList, getArticleInfo })(Login);

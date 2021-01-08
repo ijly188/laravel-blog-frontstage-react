@@ -30,6 +30,7 @@
     "dependencies": {
         "bootstrap": "^4.5.0",
         "humps": "^2.0.0",
+        "immutable": "^4.0.0-rc.12",
         "jquery": "^3.5.1",
         "lodash": "^4.17.19",
         "normalizr": "^3.6.0",

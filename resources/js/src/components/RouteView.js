@@ -6,6 +6,7 @@ class RouteRender extends Component {
   render() {
     return (
       <React.Fragment>
+        {/* 這裡的path跟exact會對應到 src/routes.js的json變數上 */}
         {routes.map((route, i) => {
           const { path, exact, routes } = route;
           return (
