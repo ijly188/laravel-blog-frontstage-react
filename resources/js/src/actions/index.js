@@ -5,7 +5,7 @@ import * as types from '../constants/actionsTypes';
 export const getArticleList = () => ({ type: types.GETARTICLELIST })
 export const getArticleInfo = () => ({ type: types.GETARTICLEINFO })
 // example
-export const getArray = () => ({ type: types.GET_ARRAY })
-export const getObject = () => ({ type: types.GET_OBJECT })
-export const getString = () => ({ type: types.GET_STRING })
-export const getInt = () => ({ type: types.GET_INT })
+export const changeArray = () => ({ type: types.CHANGE_ARRAY })
+export const changeObject = () => ({ type: types.CHANGE_OBJECT })
+export const changeString = () => ({ type: types.CHANGE_STRING })
+export const changeInt = () => ({ type: types.CHANGE_INT })

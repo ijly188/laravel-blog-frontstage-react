@@ -22,17 +22,38 @@ const initstate = {
 export function exampleState(state = initstate, action) {
   const initState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
-    case 'GET_ARRAY': {
-      return initState.array;
+    case 'CHANGE_ARRAY': {
+      let changeArray = [
+        {
+          text: 'Use Redux balabala',
+          completed: true,
+          id: 999999999999999
+        },
+        {
+          text: 'Use Redux1111 bilibili',
+          completed: false,
+          id: 888888888888888
+        }
+      ]
+      initState.array = changeArray;
+      return initState;
     }
-    case 'GET_OBJECT': {
-      return initState.object;
+    case 'CHANGE_OBJECT': {
+      let changeObject = {
+        id: 1234,
+        text: 'test1234',
+        aaasss: '喵喵喵'
+      };
+      initState.object = changeObject;
+      return initState;
     }
-    case 'GET_STRING': {
-      return initState.string;
+    case 'CHANGE_STRING': {
+      initState.string = 'zzzz';
+      return initState;
     }
-    case 'GET_INT': {
-      return initState.int;
+    case 'CHANGE_INT': {
+      initState.int = 123;
+      return initState;
     }
     default:
       return initState
