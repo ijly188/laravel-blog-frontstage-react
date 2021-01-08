@@ -1,6 +1,8 @@
 import { combineReducers } from 'redux';
-import requestReducer from './requestReducer';
+import { articleListState } from './article';
+import { exampleState } from './example';
 
 export default combineReducers({
-  request: requestReducer,
+  articleListState,
+  exampleState,
 });

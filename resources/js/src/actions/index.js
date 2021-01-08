@@ -1,13 +1,11 @@
-import axios from 'axios';
 
-export const FETCH_REQUEST_QUERY = 'fetch_request_query';
+import * as types from '../constants/actionsTypes';
 
-export const fetchRequestQuery = async (dispatch) => {
-  // const { data } = await axios.get('https://httpbin.org/get');
-  const { data } = await axios.get('http://reactlaraveldemo.test/api/articles-list');
-
-  dispatch({
-    type: FETCH_REQUEST_QUERY,
-    payload: data,
-  });
-};
+// article
+export const getArticleList = () => ({ type: types.GETARTICLELIST })
+export const getArticleInfo = () => ({ type: types.GETARTICLEINFO })
+// example
+export const getArray = () => ({ type: types.GET_ARRAY })
+export const getObject = () => ({ type: types.GET_OBJECT })
+export const getString = () => ({ type: types.GET_STRING })
+export const getInt = () => ({ type: types.GET_INT })
