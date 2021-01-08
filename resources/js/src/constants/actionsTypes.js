@@ -2,7 +2,7 @@
 export const GETARTICLELIST = 'GETARTICLELIST';
 export const GETARTICLEINFO = 'GETARTICLEINFO';
 // example
-export const GET_ARRAY = 'GET_ARRAY';
-export const GET_OBJECT = 'GET_OBJECT';
-export const GET_STRING = 'GET_STRING';
-export const GET_INT = 'GET_INT';
+export const CHANGE_ARRAY = 'CHANGE_ARRAY';
+export const CHANGE_OBJECT = 'CHANGE_OBJECT';
+export const CHANGE_STRING = 'CHANGE_STRING';
+export const CHANGE_INT = 'CHANGE_INT';

@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import Example from '../components/Example';
-import { getArray, getObject, getString, getInt } from '../actions'
+import { changeArray, changeObject, changeString, changeInt } from '../actions'
 
 const mapStateToProps = (state) => {
   console.log('state', state)
@@ -13,4 +13,4 @@ const mapStateToProps = (state) => {
 }
 
 // 把state跟action function綁到主要畫面上輸出
-export default connect(mapStateToProps, { getArray, getObject, getString, getInt })(Example);
+export default connect(mapStateToProps, { changeArray, changeObject, changeString, changeInt })(Example);

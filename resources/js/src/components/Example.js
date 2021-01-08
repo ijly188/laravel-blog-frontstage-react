@@ -1,15 +1,24 @@
 import React from 'react';
 // 接收到LoginContainer的props變數跟function綁上Component
-const Example = ({ string, int, array, object }) => {
+const Example = ({ 
+  // state
+  string, int, array, object,
+  // function
+  changeArray, changeObject, changeString, changeInt
+  }) => {
   console.log(array)
   // const { string, int, array, object } = state;
   return (
     <section>
       <h3>Example</h3>
-      {/* <button onClick={}></button> */}
+      
+      <button onClick={changeString}>changeString</button>
       <div>string : {string}</div>
+
+      <button onClick={changeInt}>changeInt</button>
       <div>int : {int}</div>
       
+      <button onClick={changeArray}>changeArray</button>
       <div>
         array : 
         {
@@ -26,6 +35,7 @@ const Example = ({ string, int, array, object }) => {
         }
       </div>
       
+      <button onClick={changeObject}>changeObject</button>
       <div>
         object : 
         {Object.keys(object).map(key => {
