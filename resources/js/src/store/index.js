@@ -1,10 +1,16 @@
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-// import Immutable from 'immutable';
+import { checkPass, articleMiddleware } from "../middleware/middleware";
 import reducers from '../reducers';
 
-// const initialState = Immutable.Map();
+const enhancer = applyMiddleware(
+	checkPass,
+	articleMiddleware,
+	thunk
+);
 
-export default createStore(reducers, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
-// export default createStore(reducers, initialState, applyMiddleware(thunk));
-// export default createStore(reducers, applyMiddleware(thunk));
+export default createStore(reducers, composeWithDevTools(
+  enhancer,
+  // other store enhancers if any
+));
