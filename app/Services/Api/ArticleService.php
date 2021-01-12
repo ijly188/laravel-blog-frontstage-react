@@ -79,7 +79,7 @@ class ArticleService
         switch ($sortTag) {
             // 依照會員編號(舊到新)
             case 'all':
-                return (new Collection($memberData))->sortByDesc('id')->values()->paginate(15);
+                return (new Collection($memberData))->sortBy('id')->values()->paginate(15);
                 break;
             // 依照會員編號(新到舊)
             case '1':

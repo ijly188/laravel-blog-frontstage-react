@@ -1,7 +1,7 @@
 // pages
 import IndexWrap from "./components/IndexWrap";
-// import Login from './components/Login';
-import Login from './containers/LoginContainer';
+import Login from './components/Login';
+import Article from './containers/ArticleContainer';
 import Member from './components/Member/Member';
 import MemberDetail from './components/Member/MemberDetail';
 import Example from './containers/ExampleContainer';
@@ -25,6 +25,13 @@ const routes = [
     exact: true,
     component: MemberDetail,
     breadcrumbName: "MemberDetail",
+  },
+  // article
+  {
+    path: "/article",
+    exact: true,
+    component: Article,
+    breadcrumbName: "Article",
   },
   {
     path: "/",

@@ -1,40 +1,20 @@
 const initstate = {
-  articleList: 0,
-  articleInfo: 0,
+  articleList: [],
+  articleInfo: [],
 }
 
-// const initstate = [
-//   {
-//     text: 'Use Redux',
-//     completed: false,
-//     id: 0
-//   },
-//   {
-//     text: 'Use Redux1111',
-//     completed: true,
-//     id: 1
-//   }
-// ]
-
-// const getTodos = state => state.todos
-
 export function articleListState(state = initstate, action) {
-  const initState = JSON.parse(JSON.stringify(state));
+  state = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case 'GETARTICLELIST': {
-      let newCount = initState.articleList + 1;
-      initState.articleList = newCount
-      console.log(initState)
-      return initState;
-      // return state.map(todo => ({ ...todo, completed: !todo.completed }))
+      let payload = JSON.parse(JSON.stringify(action.payload))
+      state.articleList = payload;
+      return state;
     }
     case 'GETARTICLEINFO': {
-      let newCount = initState.articleInfo - 1;
-      initState.articleInfo = newCount
-      console.log(initState)
-      return initState;
+      return state;
     }
     default:
-      return initState 
+      return state 
    }
 }

@@ -4,11 +4,12 @@ import { changeArray, changeObject, changeString, changeInt } from '../actions'
 
 const mapStateToProps = (state) => {
   console.log('state', state)
+  const { array, object, string, int } = state.exampleState;
   return {
-    array: state.exampleState.array,
-    object: state.exampleState.object,
-    string: state.exampleState.string,
-    int: state.exampleState.int
+    array: array,
+    object: object,
+    string: string,
+    int: int
   };
 }
 
