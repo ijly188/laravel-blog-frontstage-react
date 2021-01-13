@@ -1,15 +1,13 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-// import routes from './routes'
+import LoadingEffect from './containers/common/LoadingEffectContainer';
 import RouteView from './components/RouteView'
 
 class App extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <React.Suspense fallback={loading}> */}
+        <LoadingEffect/>
         <RouteView />
-        {/* </React.Suspense> */}
       </React.Fragment>
     )
   }
