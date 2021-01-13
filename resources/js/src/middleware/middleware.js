@@ -17,8 +17,10 @@ const checkPass = store => next => action => {
 const articleMiddleware = store => next => action => {
   switch (action.type) {
     case 'MID_GETARTICLELIST':
+      store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: true })
       apiGetArticlelist().then((res) => {
         store.dispatch({ type: constType.GETARTICLELIST, payload: res.data });
+        store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: false })
       }).catch((err => {
         console.log(err);
       }))
