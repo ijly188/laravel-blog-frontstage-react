@@ -46,6 +46,11 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
+        // 'systemUser' => [
+        //     'driver' => 'token',
+        //     'provider' => 'systemUsers',
+        //     'hash' => false,
+        // ],
     ],
 
     /*
@@ -66,13 +71,16 @@ return [
     */
 
     'providers' => [
+        // 驗證使用前台一般使用者
         'users' => [
             'driver' => 'eloquent',
-            // 驗證使用後台系統使用者
-            // 'model' => App\Entities\SystemUser::class,
-            // 驗證使用前台一般使用者
             'model' => App\Entities\Member::class,
         ],
+        // 驗證使用後台系統使用者
+        // 'systemUsers' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\Entities\SystemUser::class,
+        // ]
 
         // 'users' => [
         //     'driver' => 'database',
@@ -98,6 +106,12 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'systemUsers' => [
+            'provider' => 'systemUsers',
             'table' => 'password_resets',
             'expire' => 60,
             'throttle' => 60,

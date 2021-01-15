@@ -74,22 +74,11 @@ class MemberRepository
     public function setRegisterInfo($params)
     {
         Member::create([
-            'username' => $params['username'],
-            'password' => Hash::make($params['password']),
-            'register_type' => 'web',
-            'name' => isset($params['name']) ? $params['name'] : '',
-            'picture_url' => '[]',
             'email' => isset($params['email']) ? $params['email'] : '',
-            'phone' => $params['phone'],
-            'gender' => isset($params['sex']) ? $params['sex'] : '',
             'email_validated' => 0,
-            'email_notify' => 0,
-            'app_notify' => 0,
-            'coupon' => '[]',
-            'live_address' => '[]',
-            'transport_address' => '[]',
-            'points' => 0,
-            'member_level' => 'silver',
+            'password' => Hash::make($params['password']),
+            'name' => isset($params['name']) ? $params['name'] : '',
+            'picture_url' => '',
             'is_active' => 1,
         ]);
 

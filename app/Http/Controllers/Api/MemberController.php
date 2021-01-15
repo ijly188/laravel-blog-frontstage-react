@@ -74,17 +74,10 @@ class MemberController extends Controller
         $data = $request->all();
 
         $validator = Validator::make($data, [
-            'username' => 'required|string|alpha_num|unique:members|max:30',
+            'email' => 'required|string|alpha_num|unique:members|max:30',
             'name' => 'string|max:30',
             'password' => 'required|string|min:6|confirmed',
             'phone' => 'required|regex:/^[09]{2}[0-9]{8}$/|unique:members',
-            // 'sex' => '',
-            'validator_code' => [
-                'required',
-                Rule::exists('phone_validates')->where(function ($query) use ($data) {
-                    $query->where('phone', $data['phone']);
-                })
-            ]
         ]);
 
         if ($validator->fails()) {
@@ -94,16 +87,8 @@ class MemberController extends Controller
                 'data' => ''
             ], 422);
         }
-
-        if ($request->sex !== 'male' && $request->sex !== 'female' && !is_null($request->sex)) {
-            return response()->json([
-                'success' => false,
-                'message' => '性別欄位錯誤。',
-                'data' => ''
-            ], 422);
-        }
-
-        $message = $this->memberService->registerMember($data);
+        
+        $this->memberService->registerMember($data);
 
         return response()->json([
             'success' => true,
@@ -204,7 +189,7 @@ class MemberController extends Controller
     // 前台人員-登入
     public function postLogin(Request $request)
     {
-        $credentials = $request->only('username', 'password');
+        $credentials = $request->only('email', 'password');
 
         if (!$token = JWTAuth::attempt($credentials)) {
             return response()->json([
