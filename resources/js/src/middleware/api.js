@@ -2,20 +2,33 @@ import axios from "axios";
 import Qs from 'qs';
 
 let url;
+const { token } = localStorage;
+
 if (process.env.MIX_CLIENT_ENV === 'local') {
-    url = process.env.MIX_CLIENT_API_LOCAL_DOMAINNAME;
+	url = process.env.MIX_CLIENT_API_LOCAL_DOMAINNAME;
 }
 if (process.env.MIX_CLIENT_ENV === 'uat') {
-    url = process.env.MIX_CLIENT_API_UAT_DOMAINNAME;
+	url = process.env.MIX_CLIENT_API_UAT_DOMAINNAME;
 }
 if (process.env.MIX_CLIENT_ENV === 'production') {
-    url = process.env.MIX_CLIENT_API_PRODUCTION_DOMAINNAME;
+	url = process.env.MIX_CLIENT_API_PRODUCTION_DOMAINNAME;
 }
 
-const instance = axios.create({
-  baseURL: url,
-  headers: { 'Content-Type': 'application/json' },
+const apiDefaultWithoutToken = axios.create({
+	baseURL: url,
+	headers: { 'Content-Type': 'application/json' },
 });
 
+const apiDefaultWithToken = axios.create({
+	baseURL: url,
+	headers: {
+		Accept: 'application/json',
+		Authorization: `Bearer ${token}`,
+		'content-type': 'application/x-www-form-urlencoded'
+	},
+});
+
+// Auth
+
 // article
-export const apiGetArticlelist = () => instance['get']('/api/articles-list');
+export const apiGetArticlelist = () => apiDefaultWithoutToken['get']('/api/articles-list');

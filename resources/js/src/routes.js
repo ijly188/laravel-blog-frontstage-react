@@ -1,6 +1,7 @@
 // pages
 import IndexWrap from "./components/IndexWrap";
-import Login from './components/Login';
+import Login from './components/Auth/Login';
+import Register from './containers/Auth/RegisterContainer';
 import Article from './containers/ArticleContainer';
 import Member from './components/Member/Member';
 import MemberDetail from './components/Member/MemberDetail';
@@ -12,6 +13,12 @@ const routes = [
     path: "/login",
     exact: true,
     component: Login,
+    breadcrumbName: "Login"
+  },
+  {
+    path: "/register",
+    exact: true,
+    component: Register,
     breadcrumbName: "Login"
   },
   // member
