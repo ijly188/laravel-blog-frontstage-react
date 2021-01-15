@@ -18,11 +18,20 @@ class SystemUserController extends Controller
         $this->systemUserService = $systemUserService;
     }
 
+    public function test()
+    {
+        return response()->json([
+            'success' => true,
+            'message' => 'test成功',
+        ], 200);
+    }
+
     // 後台人員-登入
     public function postLogin(Request $request)
     {
         $credentials = $request->only('username', 'password');
-
+        // \Config::set('jwt.user', 'App\Entities\SystemUser'); 
+		\Config::set('auth.providers.users.model', \App\Entities\SystemUser::class);
         if (!$token = JWTAuth::attempt($credentials)) {
             return response()->json([
                 'success' => false,

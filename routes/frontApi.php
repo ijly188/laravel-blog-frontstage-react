@@ -42,9 +42,6 @@ Route::group(['middleware' => 'cors'], function () {
     // 前台 api 文章細節
     Route::get('/article-detail/{articleId}', 'Api\ArticleController@getArticleDetail');
 
-    // 後台 api
-    Route::post('/backstage-login', 'Api\SystemUserController@postLogin');
-
     Route::group(['middleware' => ['token.auth', 'group.permission']], function () {
         // 前台 api
         Route::post('/logout', 'Api\MemberController@postLogout');
