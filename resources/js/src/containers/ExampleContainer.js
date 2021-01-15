@@ -3,7 +3,6 @@ import Example from '../components/Example';
 import { changeArray, changeObject, changeString, changeInt } from '../actions'
 
 const mapStateToProps = (state) => {
-  console.log('state', state)
   const { array, object, string, int } = state.exampleState;
   return {
     array: array,

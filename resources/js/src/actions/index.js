@@ -1,9 +1,9 @@
 
 import * as types from '../constants/actionsTypes';
 
+// 純改redux資料的actions在這
 // article
-export const getArticleList = () => ({ type: types.GETARTICLELIST })
-export const getArticleInfo = () => ({ type: types.GETARTICLEINFO })
+
 // example
 export const changeArray = () => ({ type: types.CHANGE_ARRAY })
 export const changeObject = () => ({ type: types.CHANGE_OBJECT })
