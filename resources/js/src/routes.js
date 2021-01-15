@@ -5,6 +5,7 @@ import Article from './containers/ArticleContainer';
 import Member from './components/Member/Member';
 import MemberDetail from './components/Member/MemberDetail';
 import Example from './containers/ExampleContainer';
+import ExampleForm from './containers/ExampleFormContainer';
 
 const routes = [
   {
@@ -45,6 +46,12 @@ const routes = [
     component: Example,
     breadcrumbName: "Example"
   },
+  {
+    path: "/example-form",
+    exact: true,
+    component: ExampleForm,
+    breadcrumbName: "ExampleForm"
+  }
 ];
 
 export default routes; 

@@ -12,8 +12,8 @@ const Article = ({
       <button onClick={getArticleList}>取得文章列表</button>
       <button onClick={getArticleInfo}>取得單篇文章資料</button>
       <div>articleList: 
-        {articleList.length ? 
-          console.log(articleList)
+        {articleList.data ? 
+          JSON.stringify(articleList.data)
          :
          null
         }</div>
