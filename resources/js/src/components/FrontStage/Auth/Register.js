@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import FormErrorModal from '../Common/FormErrorModal';
+import FormErrorModal from '../../Common/FormErrorModal';
 
 export default class Register extends Component {
 	constructor(props) {
 		super(props)
 	}
-	submitForm (formData) {
+	submitForm(formData) {
 		this.props.submitData(formData)
 	}
 	render() {
@@ -18,7 +18,7 @@ export default class Register extends Component {
 					initialValues={{
 						email: '',
 						password: '',
-						confirmPassword: '',
+						password_confirmation: '',
 						accountName: '',
 					}}
 					validationSchema={Yup.object({
@@ -29,9 +29,9 @@ export default class Register extends Component {
 							.required('必填'),
 						password: Yup.string()
 							.matches(/^(?=.*[A-Za-z])(?=.*\d)[^]{6,}$/,
-							'密碼長度最少6碼且包含至少一個英文及數字')
+								'密碼長度最少6碼且包含至少一個英文及數字')
 							.required('必填'),
-						confirmPassword: Yup.string()
+						password_confirmation: Yup.string()
 							.oneOf([Yup.ref('password'), null], '確認密碼與上述不一致')
 							.required('必填'),
 					})}
@@ -60,8 +60,8 @@ export default class Register extends Component {
 						</div>
 						<div className="form-group">
 							{/* <label htmlFor="exampleInputEmail1">Name</label> */}
-							<Field id="confirmPassword" name="confirmPassword" placeholder="請再輸入一次密碼" type="password" />
-							<ErrorMessage name="confirmPassword" />
+							<Field id="password_confirmation" name="password_confirmation" placeholder="請再輸入一次密碼" type="password" />
+							<ErrorMessage name="password_confirmation" />
 						</div>
 						<div className="form-group">
 							{/* <label htmlFor="exampleInputEmail1">Name</label> */}
@@ -72,7 +72,7 @@ export default class Register extends Component {
 						<ErrorMessage component={FormErrorModal} />
 					</Form>
 				</Formik>
-				{ Object.keys(this.props.formData).length ? JSON.stringify(this.props.formData) : null }
+				{/* { Object.keys(this.props.formData).length ? JSON.stringify(this.props.formData) : null} */}
 
 			</section>
 		)
