@@ -42,15 +42,16 @@ return [
         ],
 
         'api' => [
-            'driver' => 'token',
+            'driver' => 'jwt',
             'provider' => 'users',
             'hash' => false,
         ],
-        // 'systemUser' => [
-        //     'driver' => 'token',
-        //     'provider' => 'systemUsers',
-        //     'hash' => false,
-        // ],
+        
+        'systemUser' => [
+            'driver' => 'jwt',
+            'provider' => 'systemUsers',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -75,12 +76,14 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\Entities\Member::class,
+            'table' => 'users'
         ],
         // 驗證使用後台系統使用者
-        // 'systemUsers' => [
-        //     'driver' => 'eloquent',
-        //     'model' => App\Entities\SystemUser::class,
-        // ]
+        'systemUsers' => [
+            'driver' => 'eloquent',
+            'model' => App\Entities\SystemUser::class,
+            'table' => 'system_users'
+        ]
 
         // 'users' => [
         //     'driver' => 'database',

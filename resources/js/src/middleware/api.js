@@ -28,7 +28,4 @@ const apiDefaultWithToken = axios.create({
 	},
 });
 
-// Auth
-
-// article
-export const apiGetArticlelist = () => apiDefaultWithoutToken['get']('/api/articles-list');
+export { apiDefaultWithoutToken, apiDefaultWithToken };
