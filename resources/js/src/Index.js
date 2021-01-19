@@ -4,6 +4,7 @@ import { BrowserRouter, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux'
 // import configureStore from './src/store/configureStore';
 import store from './store'
+import history from './history';
 
 // 後面可能可以加的就是polyfill，用來支援ie舊版本的東西
 
@@ -16,7 +17,7 @@ import App from './App';
 // 這邊只要確定redux有灌進去就好了
 render(
   <Provider store={store}>
-    <BrowserRouter>
+    <BrowserRouter history={history}>
       <Switch>
         <App />
       </Switch>

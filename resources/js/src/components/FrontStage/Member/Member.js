@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-// import routes from '../../../routes';
-import RouteView from '../RouteView'
 
 export default class Member extends Component {
     render() {

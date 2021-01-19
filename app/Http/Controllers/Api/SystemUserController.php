@@ -30,8 +30,8 @@ class SystemUserController extends Controller
     public function postLogin(Request $request)
     {
         $credentials = $request->only('username', 'password');
-        // \Config::set('jwt.user', 'App\Entities\SystemUser'); 
-		\Config::set('auth.providers.users.model', \App\Entities\SystemUser::class);
+        // 使用systemUser guards, 雖然登入成功, 不過後續的驗證可能會有問題, 應該寫個middleware定義哪個URL前綴帶了要轉systemUser guards
+        auth()->shouldUse('systemUser');
         if (!$token = JWTAuth::attempt($credentials)) {
             return response()->json([
                 'success' => false,

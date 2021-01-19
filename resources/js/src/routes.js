@@ -1,10 +1,11 @@
 // pages
 import IndexWrap from "./components/IndexWrap";
-import Login from './components/Auth/Login';
+import Login from './components/FrontStage/Auth/Login';
 import Register from './containers/Auth/RegisterContainer';
+import RegisterSuccess from './components/FrontStage/Auth/RegisterSuccess';
 import Article from './containers/ArticleContainer';
-import Member from './components/Member/Member';
-import MemberDetail from './components/Member/MemberDetail';
+import Member from './components/FrontStage/Member/Member';
+import MemberDetail from './components/FrontStage/Member/MemberDetail';
 import Example from './containers/ExampleContainer';
 import ExampleForm from './containers/ExampleFormContainer';
 
@@ -19,7 +20,13 @@ const routes = [
     path: "/register",
     exact: true,
     component: Register,
-    breadcrumbName: "Login"
+    breadcrumbName: "Register"
+  },
+  {
+    path: "/register-success",
+    exact: true,
+    component: RegisterSuccess,
+    breadcrumbName: "RegisterSuccess"
   },
   // member
   {

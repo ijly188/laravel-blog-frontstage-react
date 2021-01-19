@@ -1,3 +1,6 @@
+//auth
+export const SUBMIT_REGISTER_FORM = 'SUBMIT_REGISTER_FORM';
+
 // article
 export const GETARTICLELIST = 'GETARTICLELIST';
 export const GETARTICLEINFO = 'GETARTICLEINFO';

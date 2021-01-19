@@ -74,10 +74,9 @@ class MemberController extends Controller
         $data = $request->all();
 
         $validator = Validator::make($data, [
-            'email' => 'required|string|alpha_num|unique:members|max:30',
+            'email' => 'required|string|unique:members|max:50',
             'name' => 'string|max:30',
             'password' => 'required|string|min:6|confirmed',
-            'phone' => 'required|regex:/^[09]{2}[0-9]{8}$/|unique:members',
         ]);
 
         if ($validator->fails()) {
