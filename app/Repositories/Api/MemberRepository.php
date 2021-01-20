@@ -73,14 +73,14 @@ class MemberRepository
 
     public function setRegisterInfo($params)
     {
-        // Member::create([
-        //     'email' => isset($params['email']) ? $params['email'] : '',
-        //     'email_validated' => 0,
-        //     'password' => Hash::make($params['password']),
-        //     'name' => isset($params['name']) ? $params['name'] : '',
-        //     'picture_url' => '',
-        //     'is_active' => 1,
-        // ]);
+        Member::create([
+            'email' => isset($params['email']) ? $params['email'] : '',
+            'email_validated' => 0,
+            'password' => Hash::make($params['password']),
+            'name' => isset($params['name']) ? $params['name'] : '',
+            'picture_url' => '',
+            'is_active' => 1,
+        ]);
     }
     
     public function getMemberList()

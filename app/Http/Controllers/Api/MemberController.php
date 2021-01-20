@@ -218,6 +218,17 @@ class MemberController extends Controller
         ], 200);
     }
 
+    public function getMemberInfo()
+    {
+        $memberInfo = $this->memberService->getMemberInfo(JWTAuth::user());
+
+        return response()->json([
+            'success' => true,
+            'message' => '成功取得會員資訊',
+            'data' => $memberInfo,
+        ], 200);
+    }
+
     public function getAllMemberList($sortTag = 'all')
     {
         if ($sortTag != 'all' && $sortTag != '1' && $sortTag != '2' && $sortTag != '3') {

@@ -1,9 +1,9 @@
 // pages
-import IndexWrap from "./components/IndexWrap";
-import Login from './components/FrontStage/Auth/Login';
-import Register from './containers/Auth/RegisterContainer';
-import RegisterSuccess from './components/FrontStage/Auth/RegisterSuccess';
-import Article from './containers/ArticleContainer';
+import IndexWrap from './containers/IndexWrapContainer';
+import Login from './containers/Member/LoginContainer';
+import Register from './containers/Member/RegisterContainer';
+import RegisterSuccess from './components/FrontStage/Member/RegisterSuccess';
+import Article from '././containers/Article/ArticleContainer';
 import Member from './components/FrontStage/Member/Member';
 import MemberDetail from './components/FrontStage/Member/MemberDetail';
 import Example from './containers/ExampleContainer';

@@ -109,6 +109,16 @@ class MemberService
         }
     }
 
+    public function getMemberInfo($user)
+    {
+        return [
+            'id' => $user->id,
+            'email' => $user->email,
+            'name' => $user->name,
+            'pictureUrl' => $user->picture_url,
+        ];
+    }
+
     public function getMemberList($sortTag)
     {
         $memberData = $this->memberRepository->getMemberList();

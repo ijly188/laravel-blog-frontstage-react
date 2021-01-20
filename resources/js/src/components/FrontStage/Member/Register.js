@@ -72,7 +72,6 @@ export default class Register extends Component {
 						<ErrorMessage component={FormErrorModal} />
 					</Form>
 				</Formik>
-				{/* { Object.keys(this.props.formData).length ? JSON.stringify(this.props.formData) : null} */}
 
 			</section>
 		)

@@ -15,6 +15,6 @@ export function articleListState(state = initstate, action) {
       return state;
     }
     default:
-      return state 
-   }
+      return state
+  }
 }

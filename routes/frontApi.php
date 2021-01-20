@@ -42,9 +42,12 @@ Route::group(['middleware' => 'cors'], function () {
     // 前台 api 文章細節
     Route::get('/article-detail/{articleId}', 'Api\ArticleController@getArticleDetail');
 
-    Route::group(['middleware' => ['token.auth', 'group.permission']], function () {
+    Route::group(['middleware' => ['token.auth']], function () {
         // 前台 api
         Route::post('/logout', 'Api\MemberController@postLogout');
+
+        // 前台 api 個人資訊
+        Route::get('/member-info', 'Api\MemberController@getMemberInfo');
 
         // 前台 api 個人文章列表
         Route::get('/member-articles-list/{tag?}', 'Api\ArticleController@getMemberArticleList');

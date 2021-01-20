@@ -1,5 +1,6 @@
 const initstate = {
-  isLoading: false
+  isLoading: false,
+  isLogin: false
 }
 
 export function commonState(state = initstate, action) {
