@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import Article from '../components/Article';
-import { MID_GETARTICLELIST, MID_GETARTICLEINFO } from '../constants/middlewareActionsTypes';
+import Article from '../../components/Article/Article';
+import { MID_GETARTICLELIST, MID_GETARTICLEINFO } from '../../constants/middlewareActionsTypes';
 
 const mapStateToProps = (state) => {
   const { articleList, articleInfo } = state.articleListState

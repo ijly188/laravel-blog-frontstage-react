@@ -6,7 +6,10 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
+        {/* AuthComponent */}
+        {/* LoadingEffect特效層, 確保API如預期回來 */}
         <LoadingEffect/>
+
         <RouteView />
       </React.Fragment>
     )
