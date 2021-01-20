@@ -1,5 +1,8 @@
-//auth
+//member
 export const SUBMIT_REGISTER_FORM = 'SUBMIT_REGISTER_FORM';
+export const SET_USER_TOKEN = 'SET_USER_TOKEN';
+export const GET_MEMBER_INFO = 'GET_MEMBER_INFO';
+export const REFRESH_TOKEN = 'REFRESH_TOKEN';
 
 // article
 export const GETARTICLELIST = 'GETARTICLELIST';

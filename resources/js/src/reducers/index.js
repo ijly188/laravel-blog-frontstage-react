@@ -3,11 +3,11 @@ import { commonState } from './common';
 import { articleListState } from './article';
 import { exampleState } from './example';
 import { exampleFormState } from './exampleForm';
-import { authState } from './auth';
+import { memberState } from './member';
 
 export default combineReducers({
   commonState,
-  authState,
+  memberState,
   articleListState,
   exampleState,
   exampleFormState,
