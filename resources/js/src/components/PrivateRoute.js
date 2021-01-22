@@ -1,20 +1,24 @@
-import { exact } from 'prop-types';
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import routes from '../routes'
+
 
 class PrivateRoute extends Component {
   render() {
+    const { i, isAuth, breadcrumbName, component, exact, path, routes } = this.props;
+    // let AuthResult = isAuth ? checkwithlocalstorage : false;
+    let AuthResult = false;
+    // console.log(this.props);
+    console.log(routes)
     return (
-      <Route 
-        exact={exact}
-        path={path}
-        render={() => (
-          isAuthenticated
-            ? <Component />
-            : <Redirect to={ {pathname: '/', state: {from: routeProps.location}} }/>
-        )}
-      />
+      AuthResult ?
+        <Route
+          exact
+          key={i}
+          {...this.props}
+          routes={routes}
+        />
+      : 
+        window.location.href="/login"
     )
   }
 }
