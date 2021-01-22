@@ -1,26 +1,35 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
-import routes from '../routes'
+import { Router, Switch, Route } from 'react-router-dom';
+import history from '../history';
+import PrivateRoute from './PrivateRoute';
 
 class RouteRender extends Component {
   render() {
+    const { mainRoutes } = this.props;
+    console.log(mainRoutes);
     return (
-      <React.Fragment>
-        {/* 這裡的path跟exact會對應到 src/routes.js的json變數上 */}
-        {routes.map((route, i) => {
-          const { path, exact, routes } = route;
-          return (
-            <Route
-              key={i}
-              path={path}
-              exact={exact}
-              render={(routeProps) => (
-                <route.component routes={routes} {...routeProps} />
-              )}
-            />
-          );
-        })}
-      </React.Fragment>
+      <Router history={history}>
+        <Switch>
+          {mainRoutes.map((route, i) => {
+            // console.log(route)
+            return (
+              !route.isAuth ? 
+              // render ok
+              <Route
+                key={i}
+                {...route}
+                routes={route.routes}
+              />
+              :
+              <PrivateRoute
+                key={i}
+                {...route}
+                routes={route.routes}
+              />
+            )
+          })}
+        </Switch>
+      </Router>
     )
   }
 }
