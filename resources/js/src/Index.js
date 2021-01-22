@@ -17,9 +17,7 @@ import App from './App';
 render(
   <Provider store={store}>
     <BrowserRouter>
-      <Switch>
-        <App />
-      </Switch>
+      <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById('app')
