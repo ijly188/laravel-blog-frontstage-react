@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
 import { Router, Switch, Route } from 'react-router-dom';
 import history from '../history';
-import PrivateRoute from './PrivateRoute';
+import PrivateRoute from '../components/PrivateRoute';
 
-class RouteRender extends Component {
+class RouteView extends Component {
   render() {
     const { mainRoutes } = this.props;
-    console.log(mainRoutes);
+    // console.log(mainRoutes);
     return (
       <Router history={history}>
         <Switch>
           {mainRoutes.map((route, i) => {
-            // console.log(route)
             return (
               !route.isAuth ? 
               // render ok
@@ -34,4 +33,4 @@ class RouteRender extends Component {
   }
 }
 
-export default RouteRender;
+export default RouteView;
