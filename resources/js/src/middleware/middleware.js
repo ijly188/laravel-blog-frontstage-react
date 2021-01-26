@@ -15,7 +15,6 @@ const checkPass = store => next => action => {
 const examleFormMiddleware = store => next => action => {
   switch (action.type) {
     case 'MID_SUBMITFORM':
-      console.log(action.type);
       store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: true });
       // 這邊可以多一層卡控 & 打api的response判斷
       store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: false });

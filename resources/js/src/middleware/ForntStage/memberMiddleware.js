@@ -2,8 +2,6 @@ import { apiRegisterMember, apiLogin, apiGetMemberInfo} from './api';
 import { errorHandle } from '../https'
 import * as constType from '../../constants/actionsTypes';
 
-
-
 const memberMiddleware = store => next => action => {
 	const refreshToken = (res) => {
 		if (res.headers.authorization) {
@@ -25,14 +23,13 @@ const memberMiddleware = store => next => action => {
 				errorHandle(httpStatus, errorMsg);
 			}))
 			store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: false });
-			return next(action)
+			return next(action);
 		}
 	 	case 'MID_SUBMIT_LOGIN_FORM': {
 			store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: true });
 			apiLogin('post', action.payload).then((res) => {
 				const token = res.data.data.token;
 				store.dispatch({ type: constType.SET_USER_TOKEN, payload: token });
-				console.log(token);
 			}).catch((err) => {
 				console.log(err);
 			})
@@ -51,7 +48,7 @@ const memberMiddleware = store => next => action => {
 			return next(action);
 		}
 		default:
-			return next(action)
+			return next(action);
 	}
 }
 
