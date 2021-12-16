@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import IndexWrap from '../components/IndexWrap';
-import { MID_GET_MEMBER_INFO } from '../constants/middlewareActionsTypes';
+import {
+  actionGetMemberInfo
+} from '../actions/member';
 
 const mapStateToProps = (state) => {
   const { memberInfo } = state.memberState
@@ -10,7 +12,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-  getMemberInfo:(payload) => dispatch({ type: MID_GET_MEMBER_INFO }),
+  getMemberInfo: (payload) => dispatch(actionGetMemberInfo(payload)),
 });
 
 // 把state跟action function綁到主要畫面上輸出

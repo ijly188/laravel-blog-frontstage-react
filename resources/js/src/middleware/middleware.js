@@ -12,15 +12,15 @@ const checkPass = store => next => action => {
   }
 }
 
-const examleFormMiddleware = store => next => action => {
+const exampleFormMiddleware = store => next => action => {
   switch (action.type) {
-    case 'MID_SUBMITFORM':
-      store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: true });
+    case 'MID_SUBMIT_FORM':
+      store.dispatch({ type: constType.CHANGE_EFFECT_IS_LOADING, payload: true });
       // 這邊可以多一層卡控 & 打api的response判斷
-      store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: false });
+      store.dispatch({ type: constType.CHANGE_EFFECT_IS_LOADING, payload: false });
       return next(action)
     default:
       next(action)
   }
 }
-export { checkPass, examleFormMiddleware };
+export { checkPass, exampleFormMiddleware };

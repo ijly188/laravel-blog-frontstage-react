@@ -1,18 +1,18 @@
-import { apiGetArticlelist } from '../ForntStage/api';
+import { apiGetArticlelist } from '../FrontStage/api';
 import * as constType from '../../constants/actionsTypes';
 
 const articleMiddleware = store => next => action => {
 	switch (action.type) {
-		case 'MID_GETARTICLELIST':
-			store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: true })
+		case 'MID_GET_ARTICLE_LIST':
+			store.dispatch({ type: constType.CHANGE_EFFECT_IS_LOADING, payload: true })
 			apiGetArticlelist('get').then((res) => {
-				store.dispatch({ type: constType.GETARTICLELIST, payload: res.data });
-				store.dispatch({ type: constType.CHANGE_EFFECT_ISLOADING, payload: false })
+				store.dispatch({ type: constType.GET_ARTICLE_LIST, payload: res.data });
+				store.dispatch({ type: constType.CHANGE_EFFECT_IS_LOADING, payload: false })
 			}).catch((err => {
 				console.log(err);
 			}))
 			return next(action)
-		case 'MID_GETARTICLEINFO':
+		case 'MID_GET_ARTICLE_INFO':
 			// do something...
 			return
 		default:

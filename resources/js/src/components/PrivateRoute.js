@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
-import { apiGetMemberInfo } from '../middleware/ForntStage/api';
+import { apiGetMemberInfo } from '../middleware/FrontStage/api';
 
 class PrivateRoute extends Component {
   // 預設通過登入驗證, 只有未通過的時候才擋

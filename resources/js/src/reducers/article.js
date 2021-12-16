@@ -1,17 +1,17 @@
-const initstate = {
+const initState = {
   articleList: [],
   articleInfo: [],
 }
 
-export function articleListState(state = initstate, action) {
+export function articleState(state = initState, action) {
   state = JSON.parse(JSON.stringify(state));
   switch (action.type) {
-    case 'GETARTICLELIST': {
+    case 'GET_ARTICLE_LIST': {
       let payload = JSON.parse(JSON.stringify(action.payload))
       state.articleList = payload;
       return state;
     }
-    case 'GETARTICLEINFO': {
+    case 'GET_ARTICLE_INFO': {
       return state;
     }
     default:

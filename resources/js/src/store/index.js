@@ -1,16 +1,16 @@
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import { checkPass, examleFormMiddleware } from '../middleware/middleware';
-import { articleMiddleware } from '../middleware/ForntStage/articleMiddleware';
-import { memberMiddleware } from '../middleware/ForntStage/memberMiddleware';
+import { checkPass, exampleFormMiddleware } from '../middleware/middleware';
+import { articleMiddleware } from '../middleware/FrontStage/articleMiddleware';
+import { memberMiddleware } from '../middleware/FrontStage/memberMiddleware';
 import reducers from '../reducers';
 
 const enhancer = applyMiddleware(
 	checkPass,
 	memberMiddleware,
 	articleMiddleware,
-	examleFormMiddleware,
+	exampleFormMiddleware,
 	thunk
 );
 

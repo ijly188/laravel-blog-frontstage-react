@@ -22,6 +22,7 @@ export function memberState(state = initstate, action) {
     }
     case 'REFRESH_TOKEN': {
       state.usertoken = action.payload;
+      
       localStorage.removeItem('token');
       localStorage.setItem('token', action.payload);
       window.location.reload();

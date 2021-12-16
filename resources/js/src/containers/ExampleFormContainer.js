@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ExampleForm from '../components/ExampleForm';
-import { MID_SUBMITFORM } from '../constants/middlewareActionsTypes';
+import { MID_SUBMIT_FORM } from '../constants/middlewareActionsTypes';
 
 const mapStateToProps = (state) => {
 	const { formData } = state.exampleFormState;
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => {
 }
 
 const mapDispatchToProps = dispatch => ({
-	submitData: (payload) => dispatch({ type: MID_SUBMITFORM , payload: payload })
+	submitData: (payload) => dispatch({ type: MID_SUBMIT_FORM , payload: payload })
 });
 
 // 把state跟action function綁到主要畫面上輸出

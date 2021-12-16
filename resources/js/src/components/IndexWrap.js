@@ -2,18 +2,26 @@ import React, { Component } from 'react';
 import  Article  from '../containers/Article/ArticleContainer';
 
 export default class IndexWrap extends Component {
+  // 在這裡這樣做因為要保證 refreshToken 機制
   async componentDidMount() {
-    await this.props.getMemberInfo();
+    const {
+      getMemberInfo
+    } = this.props;
+    await getMemberInfo();
   }
   render() {
+    const {
+      memberInfo,
+    } = this.props;
     return (
       <div>
         indexwrap
         <Article />
+        memberInfo:<br />
         {
-          Object.keys(this.props.memberInfo) ? JSON.stringify(this.props.memberInfo)
-          :
-          null
+          !memberInfo ? null :
+            !Object.keys(memberInfo) ? null :
+              JSON.stringify(memberInfo)
         }
       </div>
     )
