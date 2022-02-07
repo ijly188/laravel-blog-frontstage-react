@@ -1,0 +1,83 @@
+$sizeConfig: (s0: (class: '160x70',
+        width: 160px,
+        height: 70px),
+    s1: (class: '250x70',
+        width: 250px,
+        height: 70px),
+    s2: (class: '40x40',
+        width: 40px,
+        height: 40px),
+    s3: (class: '1008x434',
+        width: 1008px,
+        height: 434px),
+    s4: (class: '280x150',
+        width: 280px,
+        height: 150px),
+    s5: (class: '640x640',
+        width: 640px,
+        height: 640px),
+    s6: (class: '192x192',
+        width: 192px,
+        height: 192px),
+    s7: (class: '192x110',
+        width: 192px,
+        height: 110px),
+    s8: (class: '384x412',
+        width: 384px,
+        height: 412px),
+    s9: (class: '118x118',
+        width: 118px,
+        height: 118px),
+    s10: (class: '200x412',
+        width: 200px,
+        height: 412px),
+    s11: (class: '72x40',
+        width: 72px,
+        height: 40px),
+    s12: (class: '220x220',
+        width: 220px,
+        height: 220px),
+    s13: (class: '180x180',
+        width: 180px,
+        height: 180px),
+    s14: (class: '387x387',
+        width: 387px,
+        height: 387px),
+    s15: (class: '1212x340',
+        width: 1212px,
+        height: 340px),
+    s16: (class: '600x258',
+        width: 600px,
+        height: 258px),
+    s17: (class: '130x130',
+        width: 130px,
+        height: 130px),
+);
+
+// imgResize--
+// style="background-image: url()"
+
+@mixin fullBg() {
+    background: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@each $name,
+$value in $sizeConfig {
+    $class: map-get($value, class);
+    $width: map-get($value, width);
+    $height: map-get($value, height);
+
+    .imgResize {
+        &--#{$class} {
+            width: $width;
+            height: $height;
+            display: block;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+        }
+    }
+}
