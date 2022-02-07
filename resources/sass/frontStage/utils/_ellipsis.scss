@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+@mixin ellipsis($width:auto,$row:1){
+  width:$width;
+  display: -webkit-box;
+  overflow: hidden;
+  min-height: initial !important;
+  text-overflow: clip;
+  /*! autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -webkit-line-clamp: $row;
+}
