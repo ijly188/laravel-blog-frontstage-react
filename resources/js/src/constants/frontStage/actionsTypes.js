@@ -1,0 +1,6 @@
+// common
+export const UPDATE_LOADING_STATUS = 'UPDATE_LOADING_STATUS';
+export const REFRESH_TOKEN = 'REFRESH_TOKEN';
+
+// member
+export const UPDATE_MEMBER_INFO = 'UPDATE_MEMBER_INFO';

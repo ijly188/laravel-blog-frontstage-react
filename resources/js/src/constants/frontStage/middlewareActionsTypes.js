@@ -1,0 +1,10 @@
+// member
+export const MID_SUBMIT_REGISTER_FORM = 'MID_SUBMIT_REGISTER_FORM';
+export const MID_SUBMIT_LOGIN_FORM = 'MID_SUBMIT_LOGIN_FORM';
+export const MID_GET_MEMBER_INFO = 'MID_GET_MEMBER_INFO';
+// article
+export const MID_GET_ARTICLE_LIST = 'MID_GET_ARTICLE_LIST';
+export const MID_GET_ARTICLE_INFO = 'MID_GET_ARTICLE_INFO';
+
+// example form
+export const MID_SUBMIT_FORM = 'MID_SUBMIT_FORM';
