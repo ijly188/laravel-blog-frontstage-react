@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Register from '../../components/FrontStage/Member/Register';
+import Register from '../../components/frontStage/Member/Register';
 import { MID_SUBMIT_REGISTER_FORM } from '../../constants/middlewareActionsTypes';
 
 // const mapStateToProps = (state) => {

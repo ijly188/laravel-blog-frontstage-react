@@ -122,3 +122,8 @@ JWT_TTL=
     ],
 ```
 在這邊做切換可以設定驗證的資料庫用的是systemuser還是member
+
+前台會用 class component 去寫
+後台會用 function component 去寫
+
+前台會盡量試著去寫測試

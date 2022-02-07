@@ -1,4 +1,4 @@
-const initstate = {
+const initState = {
   string: '222222',
   int: 1,
   array: [
@@ -19,8 +19,8 @@ const initstate = {
   }
 }
 
-export function exampleState(state = initstate, action) {
-  const initState = JSON.parse(JSON.stringify(state));
+export function exampleState(state = initState, action) {
+  // const initState = JSON.parse(JSON.stringify(state));
   switch (action.type) {
     case 'CHANGE_ARRAY': {
       let changeArray = [
@@ -35,8 +35,8 @@ export function exampleState(state = initstate, action) {
           id: 888888888888888
         }
       ]
-      initState.array = changeArray;
-      return initState;
+      state.array = changeArray;
+      return state;
     }
     case 'CHANGE_OBJECT': {
       let changeObject = {
@@ -44,18 +44,18 @@ export function exampleState(state = initstate, action) {
         text: 'test1234',
         aaasss: '喵喵喵'
       };
-      initState.object = changeObject;
-      return initState;
+      state.object = changeObject;
+      return state;
     }
     case 'CHANGE_STRING': {
-      initState.string = 'zzzz';
-      return initState;
+      state.string = 'zzzz';
+      return state;
     }
     case 'CHANGE_INT': {
-      initState.int = 123;
-      return initState;
+      state.int = 123;
+      return state;
     }
     default:
-      return initState
+      return state;
   }
 }

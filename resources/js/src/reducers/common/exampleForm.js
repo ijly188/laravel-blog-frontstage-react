@@ -1,8 +1,8 @@
-const initstate = {
+const initState = {
 	formData: {}
 }
 
-export function exampleFormState(state = initstate, action) {
+export function exampleFormState(state = initState, action) {
 	state = JSON.parse(JSON.stringify(state));
 	switch (action.type) {
 		case 'SUBMIT_FORM': {

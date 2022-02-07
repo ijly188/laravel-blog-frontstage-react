@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import Login from '../../components/FrontStage/Member/Login';
+import Login from '../../components/frontStage/Member/Login';
 import { MID_SUBMIT_LOGIN_FORM } from '../../constants/middlewareActionsTypes';
 
 const mapStateToProps = (state) => {

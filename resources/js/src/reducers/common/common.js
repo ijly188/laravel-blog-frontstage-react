@@ -5,13 +5,13 @@ const initState = {
 
 export function commonState(state = initState, action) {
   switch (action.type) {
-    case 'CHANGE_EFFECT_IS_LOADING': {
+    case 'UPDATE_LOADING_STATUS': {
       return {
         ...state,
         isLoading: action.payload,
       };
     }
     default:
-      return state
+      return state;
   }
 }
